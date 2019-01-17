@@ -47,7 +47,7 @@ var interval = setInterval(function () {
 				index++;
 				timer = 1;
 			} else {
-				console.log("We've sent " + invites + " so far!);
+				console.log("We've sent " + invites + " so far!");
         if (maxInvites != 0 && maxInvites >= invites) {
           clearInterval(interval);
         }
