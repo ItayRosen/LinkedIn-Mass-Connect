@@ -1,5 +1,5 @@
 # LinkedIn-Mass-Connect
-A PoC for a mass connect LinkedIn script. It just sends an invite to everyone within a specific search page.
+A PoC for a mass connect LinkedIn script. Run the script on a LinkedIn search page and it will send an invite to everyone matching the search parameters.
 
 # How-To
 1. Go to LinkedIn and create a search according to your preferred criterias.
