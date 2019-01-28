@@ -48,9 +48,10 @@ var interval = setInterval(function () {
 				timer = 1;
 			} else {
 				console.log("We've sent " + invites + " so far!");
-        if (maxInvites != 0 && maxInvites >= invites) {
-          clearInterval(interval);
-        }
+				if (maxInvites != 0 && maxInvites >= invites) {
+					console.log("Finished sending invites");
+					clearInterval(interval);
+				}
 				else if (document.getElementsByClassName("next")[0] !== undefined) {
 					newPage = true;
 					timer = 20;
