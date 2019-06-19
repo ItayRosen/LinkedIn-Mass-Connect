@@ -1,7 +1,8 @@
-//Only change the maxInvites parameter to your preferred amount of invites you wish to send. Set to 0 for unlimited.
 var maxInvites = 0;
-
-var els = document.getElementsByClassName("search-result__action-button search-result__actions--primary button-secondary-medium m5");
+var connectButton = "search-result__action-button search-result__actions--primary artdeco-button artdeco-button--default artdeco-button--2 artdeco-button--secondary";
+var sendButton = "artdeco-button artdeco-button--3 ml1";
+var nextButton = "artdeco-pagination__button artdeco-pagination__button--next artdeco-button artdeco-button--muted artdeco-button--icon-right artdeco-button--1 artdeco-button--tertiary ember-view";
+var els = document.getElementsByClassName(connectButton);
 var index = 0;
 var send = false;
 var newPage = false;
@@ -15,8 +16,8 @@ var interval = setInterval(function () {
 	if (counter >= timer) {
 		counter = 0;
 		if (newPage) {
-			els = document.getElementsByClassName("search-result__action-button search-result__actions--primary button-secondary-medium m5");
-			if (els.length < 1)
+			els = document.getElementsByClassName(connectButton);
+			if (els.length < 2)
 			{
 				console.log("Waiting for content..");
 			}
@@ -32,12 +33,12 @@ var interval = setInterval(function () {
 			reload = false;
 			location.reload();
 		}
-		else if (send && document.getElementsByClassName("button-primary-large ml1")[0] !== undefined) {
+		else if (send && document.getElementsByClassName(sendButton)[0]) {
 			send = false;
-			document.getElementsByClassName("button-primary-large ml1")[0].click();
+			document.getElementsByClassName(sendButton)[0].click();
 			invites++;
 			timer = 1;
-		} 
+		}
 		else {
 			if (index < els.length) {
 				if (els[index] !== undefined) {
@@ -52,10 +53,11 @@ var interval = setInterval(function () {
 					console.log("Finished sending invites");
 					clearInterval(interval);
 				}
-				else if (document.getElementsByClassName("next")[0] !== undefined) {
+				else if (document.getElementsByClassName(nextButton)[0]) {
 					newPage = true;
 					timer = 20;
-					document.getElementsByClassName("next")[0].click();
+					document.getElementsByClassName(nextButton)[0].click();
+					console.log("Next page");
 				}
 				else {
 					console.log("Search limit reached");
