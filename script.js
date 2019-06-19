@@ -1,8 +1,8 @@
 var maxInvites = 0;
-
 var connectButton = "search-result__action-button search-result__actions--primary artdeco-button artdeco-button--default artdeco-button--2 artdeco-button--secondary";
 var sendButton = "artdeco-button artdeco-button--3 ml1";
 var nextButton = "artdeco-pagination__button artdeco-pagination__button--next artdeco-button artdeco-button--muted artdeco-button--icon-right artdeco-button--1 artdeco-button--tertiary ember-view";
+var outOfInvitesButton = "artdeco-button ip-fuse-limit-alert__primary-action artdeco-button--2 artdeco-button--primary ember-view";
 var els = document.getElementsByClassName(connectButton);
 var index = 0;
 var send = false;
@@ -60,10 +60,12 @@ var interval = setInterval(function () {
 					document.getElementsByClassName(nextButton)[0].click();
 					console.log("Next page");
 				}
-				else {
+				else if (document.getElementsByClassName(outOfInvitesButton)[0]) {
 					console.log("Search limit reached");
-					reload = true;
-					timer = 300;
+					clearInterval(interval);
+				}
+				else {
+					console.log("Unknown error");
 				}
 			}
 		}
