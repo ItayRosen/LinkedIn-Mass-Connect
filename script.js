@@ -1,4 +1,5 @@
 var maxInvites = 0;
+
 var connectButton = "search-result__action-button search-result__actions--primary artdeco-button artdeco-button--default artdeco-button--2 artdeco-button--secondary";
 var sendButton = "artdeco-button artdeco-button--3 ml1";
 var nextButton = "artdeco-pagination__button artdeco-pagination__button--next artdeco-button artdeco-button--muted artdeco-button--icon-right artdeco-button--1 artdeco-button--tertiary ember-view";
